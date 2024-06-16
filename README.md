@@ -17,7 +17,10 @@ kubectl delete pod <pod name>
 
 # replicaset
 kubectl create --save-config -f replicaset.yaml
-kubectl apply -f pod.yaml
-kubectl get replicaset # can use rs instead of replicaset
+kubectl get replicaset //can use rs instead of replicaset
 kubectl delete replicaset <replicaset name>
 
+# deployment
+kubectl create --save-config -f deployment.yaml
+kubectl get deployment //can use deploy instead of deployment
+kubectl delete deploymment <deployment name>
