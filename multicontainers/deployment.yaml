@@ -5,7 +5,7 @@ metadata:
   labels:
     name: my-deployment
 spec:
-  replicas: 3
+  replicas: 2 #2 pods. each pod having 2 containers specified below (i.e. nginx and ubuntu)
   selector:
     matchLabels:
       server: nginx
@@ -28,3 +28,12 @@ spec:
               cpu: "500m"
           ports:
             - containerPort: 80
+        - name: server
+          image: ubuntu:latest
+          resources:
+            limits:
+              memory: "500Mi"
+              cpu: "500m"
+          command: ["/bin/bash", "-c"] #needed to prevent ubuntu from crashing as it has nothing to do
+          args:
+            - sleep 600

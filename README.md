@@ -24,3 +24,12 @@ kubectl delete replicaset <replicaset name>
 kubectl create --save-config -f deployment.yaml
 kubectl get deployment //can use deploy instead of deployment
 kubectl delete deploymment <deployment name>
+
+# others
+kubectl exec -it <pod name> -c <container name in pod> -- /bash/bin
+kubectl logs <pod name> -c <container name in pod>
+
+
+
+# useful repos
+UKHomeOffice/vault-sidekick for initContainer to pull down cert from Hashicorp vault
