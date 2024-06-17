@@ -6,7 +6,7 @@ minikube doesnt work with virtualbox 7.0.8 for apple silicon. Use podman as work
 podman machine init --cpus 2 --memory 2048 --rootful 
 podman machine start
 minikube start --driver=podman
-
+minikube addons enable ingress
 
 # pod
 kubectl create --save-config -f pod.yaml
@@ -28,6 +28,9 @@ kubectl delete deploymment <deployment name>
 # others
 kubectl exec -it <pod name> -c <container name in pod> -- /bash/bin
 kubectl logs <pod name> -c <container name in pod>
+kc get ingress/ service
+kc delete ingress/ service <name>
+
 
 
 
