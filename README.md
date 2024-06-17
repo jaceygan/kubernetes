@@ -25,13 +25,23 @@ kubectl create --save-config -f deployment.yaml
 kubectl get deployment //can use deploy instead of deployment
 kubectl delete deploymment <deployment name>
 
+# storage
+kc get pv/ pvc
+kc create configmap <whatever name> --from-file=filename.conf
+kc get cm
+kc describe cm <cm name>
+
 # others
 kubectl exec -it <pod name> -c <container name in pod> -- /bash/bin
 kubectl logs <pod name> -c <container name in pod>
 kc get ingress/ service
 kc delete ingress/ service <name>
+kc get namespace
 
 
+# environments
+kc config get-contexts  
+kc config use-context <context name>
 
 
 # useful repos
