@@ -11,7 +11,7 @@ minikube addons enable ingress
 # pod
 kubectl create --save-config -f pod.yaml
 kubectl apply -f pod.yaml
-kubectl get pods
+kubectl get pods -o wide
 kubectl describe pods
 kubectl delete pod <pod name>
 
@@ -42,7 +42,14 @@ kc get namespace
 # environments
 kc config get-contexts  
 kc config use-context <context name>
+kc get nodes
 
+# maintenance
+kc get nodes
+kc drain <node name>
+-- do whatever on the node
+kc uncordon <node name>
 
 # useful repos
 UKHomeOffice/vault-sidekick for initContainer to pull down cert from Hashicorp vault
+https://github.com/addamstj/kubernetes-course 
